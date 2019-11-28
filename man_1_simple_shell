@@ -1,0 +1,93 @@
+.TH HSH 1 "28/11/19" "1.0" "Holberton Commands Manual"
+.SH NAME
+.B Holberton Shell
+.ND An implementation of a simple shell in C language.
+.SH SYNOPSIS             \" Section Header - required - don't modify
+.B command
+.OP args              \" [-abcd]
+.OP path         \" [-a path]
+.PP
+.SH DESCRIPTION          \" Section Header - required - don't modify
+The Holberton shell is capable of executing basic operations in interactive and non interactive mode. It uses
+.B execve()
+function to execute a command coming from standard input
+which is tokenized using
+.B strtok()
+to discriminate command, arguments and path. A child process is created using
+.AR fork()
+to do the execve function as a subprocess. Given that a special command is entered, the shell will exit
+whit a specific status.
+
+.B Basic Features
+
+-Displays a prompt and wait for the user to type a command.
+
+-A command line always ends with a new line.
+
+-The prompt is displayed again each time a command has been executed.
+
+-The command lines are simple, no semicolons, no pipes, no redirections or any other advanced features.
+
+-If an executable cannot be found, prints an error message and display the prompt again.
+
+.PP
+.SH ENVIRONMENT
+The shell uses the environment user's environment
+From wich the
+.B PATH
+Variable is extracted to look for executables in all path values.
+
+.SH USE
+
+The Holberton shell may be invoked as an executable using ./shell. At runtime execute commands as in the following example
+
+
+$ ls
+
+shell.c shell env_functions.c str_functions.c shell.h
+
+$
+
+$ pwd
+
+/home/user/shell
+
+$
+
+$ exit
+
+
+.SH FILES
+
+.B shell.h
+Header file. Contains all required libraries and functions definitions
+
+.B shell.c
+Main program entry pont
+
+.B env_functions.c
+Functions for environment manipulation
+
+.B str_functions.c
+Functions for string manipulation
+
+.B frees.c
+Memory freeing functions
+
+.BUGS
+
+Valgrind reports memory leaks currently being chcked and fixed.
+
+Report any bugs found to 1087@holbertonschool.com
+
+.SH MISSING FEATURES
+
+No special characters are handled. Built in exit does not handle arguments.
+
+No setenv or unsetenv options available.
+
+No option to change directory cd.
+
+No logical oeprators && || or command separator ';'
+.SH AUTHORS
+Brayan Florez and David Ovalle. Licensed under MIT license.
