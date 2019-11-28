@@ -37,7 +37,7 @@ char *_strcatDirCmd(char *s1, char *s2)
 
 /**
  * print_env - prints the environment for testing purposes
- *
+ * @environ: the double pointer containing the user's environ
  */
 
 void print_env(char **environ)
