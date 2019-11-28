@@ -32,7 +32,7 @@ File | Description
 
 ### Installation
 
-First of all clone this repository: `git clone here goes our link` then you need to compile it using this command `gcc -Wall -Werror -Wextra -pedantic *.c -o shell`
+First of all clone this repository: `git clone https://github.com/BrianFs04/simple_shell.git` then you need to compile it using this command `gcc -Wall -Werror -Wextra -pedantic *.c -o shell`
 
 ### Usage
 
